@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.library.controller.SignUpController"
+      alignment="CENTER" spacing="16"
+      style="-fx-padding: 40; -fx-background-color: #f4f4f4;">
+    <Label text="Create Account" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <VBox spacing="6" maxWidth="300">
+        <Label text="Username"/>
+        <TextField fx:id="txtUsername" promptText="Choose a username"/>
+    </VBox>
+    <VBox spacing="6" maxWidth="300">
+        <Label text="Password"/>
+        <PasswordField fx:id="txtPassword" promptText="Choose a password"/>
+    </VBox>
+    <VBox spacing="6" maxWidth="300">
+        <Label text="Confirm Password"/>
+        <PasswordField fx:id="txtConfirmPassword" promptText="Repeat password"/>
+    </VBox>
+    <Button text="Create Account" onAction="#handleCreateAccount" maxWidth="300"
+            style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 13px; -fx-pref-height: 36px;"/>
+    <Button text="Cancel" onAction="#handleCancel" maxWidth="300" style="-fx-pref-height: 36px;"/>
+</VBox>

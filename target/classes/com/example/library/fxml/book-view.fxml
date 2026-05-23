@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.library.controller.BookController"
+      spacing="12" style="-fx-padding: 20; -fx-background-color: #f4f4f4;">
+    <Label text="Library Management System" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints minWidth="100" prefWidth="120"/>
+            <ColumnConstraints prefWidth="250" hgrow="ALWAYS"/>
+            <ColumnConstraints minWidth="100" prefWidth="120"/>
+            <ColumnConstraints prefWidth="250" hgrow="ALWAYS"/>
+        </columnConstraints>
+        <Label text="ID"       GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtId" promptText="Auto" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="Book No." GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtBookNo" promptText="LIB-0001" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+        <Label text="Title"    GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtTitle" promptText="Book Title" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label text="Author"   GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtAuthor" promptText="Author Name" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+        <Label text="Genre"    GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <ComboBox fx:id="cmbGenre" promptText="Select genre" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label text="Year"     GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+        <TextField fx:id="txtYear" promptText="2024" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+        <Label text="Status"   GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <ComboBox fx:id="cmbStatus" promptText="Select status" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    </GridPane>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Button text="Add"    onAction="#handleAdd"    style="-fx-background-color:#4CAF50;-fx-text-fill:white;-fx-min-width:70px;"/>
+        <Button text="Update" onAction="#handleUpdate" style="-fx-background-color:#2196F3;-fx-text-fill:white;-fx-min-width:70px;"/>
+        <Button text="Delete" onAction="#handleDelete" style="-fx-background-color:#f44336;-fx-text-fill:white;-fx-min-width:70px;"/>
+        <Button text="Clear"  onAction="#handleClear"  style="-fx-min-width:70px;"/>
+        <HBox HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="txtSearch" promptText="Search title, author, genre..." prefWidth="240"/>
+        <Button text="Search" onAction="#handleSearch" style="-fx-background-color:#607D8B;-fx-text-fill:white;"/>
+    </HBox>
+    <TableView fx:id="tableBooks" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId"     text="ID"       prefWidth="50"/>
+            <TableColumn fx:id="colBookNo" text="Book No." prefWidth="90"/>
+            <TableColumn fx:id="colTitle"  text="Title"    prefWidth="200"/>
+            <TableColumn fx:id="colAuthor" text="Author"   prefWidth="150"/>
+            <TableColumn fx:id="colGenre"  text="Genre"    prefWidth="100"/>
+            <TableColumn fx:id="colYear"   text="Year"     prefWidth="60"/>
+            <TableColumn fx:id="colStatus" text="Status"   prefWidth="90"/>
+        </columns>
+        <placeholder><Label text="No books found."/></placeholder>
+    </TableView>
+</VBox>
